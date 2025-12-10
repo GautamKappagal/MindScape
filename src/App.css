@@ -1,0 +1,271 @@
+#root {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+.sidebar {
+  width: 200px;
+  padding: 20px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #202020;
+  gap: 20px;
+}
+
+.sidebar button:hover {
+  border-color: #646cff;
+}
+
+.sidebar-title {
+  display: flex;
+  justify-content: center;
+  padding-top: 30px;
+}
+
+.content {
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.entries-box {
+  padding: 25px 100px;
+  border-radius: 20px;
+  background-color: #202020;
+  align-items: center;
+}
+
+.sliders {
+  display: flex;
+  flex: 1;
+  gap: 20px;
+}
+
+input[type="range"] {
+  width: 350px;
+  height: 6px;
+  -webkit-appearance: none;
+  background: #c4c4c4;
+  border-radius: 5px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  background: #484a5b;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.add-entry-title-box {
+  display: block;
+  width: 725px;
+  height: 30px;
+  border: none;
+  background-color: transparent;
+  color: white;
+  font-size: 20px;
+  margin-bottom: 15px;
+  resize: none;
+}
+
+.add-entry-description-box {
+  display: block;
+  width: 725px;
+  height: 120px;
+  border: none;
+  background-color: transparent;
+  color: white;
+  font-size: 16px;
+  resize: none;
+}
+
+.add-entry-title-box::placeholder {
+  font-size: 20px;
+  color: #777;
+}
+
+.add-entry-description-box::placeholder {
+  font-size: 16px;
+  color: #777;
+}
+
+.add-entry-title-box:focus,
+.add-entry-description-box:focus {
+    outline: none;
+}
+
+.save-entry-button {
+  display: block;
+  margin-top: 20px;
+  margin-left: auto;
+}
+
+.add-entry-toggle {
+  font-size: 24px;
+  padding: 0;
+  border: 1px solid #444;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.title-plus {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 725px;
+  padding: 10px 0;
+  margin: 0 auto;
+}
+
+.active-plus {
+  border: 1px solid #646cff;
+}
+
+.entry-text-inputs-box {
+  display: block;
+  padding: 20px;
+  background-color: rgb(50, 50, 50);
+  border-radius: 10px;
+}
+
+.entry-slider-stats {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.entry-slider-stats h3 {
+  color: #ccc;
+}
+
+.entry-date-time {
+  display: flex;
+  gap: 350px;
+}
+
+.new-entries-box {
+  background-color: #252525;
+  width: 725px;
+  padding: 0 25px;
+  border-radius: 10px;
+  transition: max-height 0.5s ease, opacity 0.5s ease;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+}
+
+.new-entries-box.show {
+  max-height: 600px;
+  opacity: 1;
+}
+
+.new-entries-box.show {
+  display: block;
+  padding: 10px 25px;
+}
+
+.past-entry h2, .past-entry h3, .past-entry p{
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin: 15px 0;
+}
+
+.past-entry {
+  position: relative; /* needed for absolute positioning of delete button */
+  padding: 8px 20px 20px 20px;
+  border-radius: 10px;
+  background: #2e2e2eff;
+  margin-bottom: 20px;
+  width: 725px;
+}
+
+.delete-entry {
+  position: absolute;
+  top: 10px;
+  right: 18px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin-top: 10px;
+  border: 1px solid #444;
+}
+
+.delete-entry:hover {
+  border-color: #d01b1b;
+}
+
+.stats-summary {
+  display: flex;
+  flex: 1;
+  gap: 40px;
+}
+
+.num-entries-card, .avg-mood-card, .avg-productivity-card {
+  background-color: #363636;
+  width: 300px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: 1px solid #303030;
+  margin-bottom: 30px;
+}
+
+.suggested-action-today {
+  background-color: #363636;
+  padding: 5px 20px;
+  border-radius: 10px;
+  border: 1px solid #303030;
+}
