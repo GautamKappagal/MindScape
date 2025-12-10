@@ -1,9 +1,8 @@
 import React, { useState } from 'react'
 
-function Entries() {
+function Entries({entries, setEntries}) {
     const [entryTitle, setEntryTitle] = useState("")
     const [entryDesc, setEntryDesc] = useState("")
-    const [entries, setEntries] = useState([])
     const [feeling, setFeeling] = useState(10)
     const [productivity, setProductivity] = useState(10)
     const [date, setDate] = useState(new Date().toISOString().slice(0, 10))
@@ -21,19 +20,21 @@ function Entries() {
         }
 
         setEntries([newEntry, ...entries])
-        setText("")
+        setEntryTitle("")
+        setEntryDesc("")
+        setShowForm(false)
     }
 
     return (
         <div className = "entries-box">
             <div className = "title-plus">
                 <h1>Entries</h1>
-                <button className={`add-entry-toggle ${showForm ? "active-plus" : ""}`} onClick = {() => setShowForm(!showForm)}>
+                <button className = {`add-entry-toggle ${showForm ? "active-plus" : ""}`} onClick = {() => setShowForm(!showForm)}>
                     +
                 </button>
             </div>
 
-            <div className = "new-entries-box">
+            <div className = {`new-entries-box ${showForm ? "show" : ""}`}>
                 {showForm && (
                 <>
                     <div className="sliders">
