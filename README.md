@@ -1,4 +1,4 @@
-# MindScape: Mood-Productivity Correlation Tracker
+# MindScape: Mood-Productivity Tracking Journal
 
 **MindScape** is a modern, data-driven web application designed to help users understand the direct relationship between their **emotional state** and their **daily productivity**. It moves beyond simple journaling by visualizing trends, calculating meaningful correlations, and generating actionable insights.
 
