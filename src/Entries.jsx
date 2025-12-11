@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react'
 
 function Entries({entries, setEntries}) {
@@ -23,6 +24,11 @@ function Entries({entries, setEntries}) {
         setEntryTitle("")
         setEntryDesc("")
         setShowForm(false)
+    }
+
+    function handleDelete(index) {
+        const updated = entries.filter((_, i) => i !== index);
+        setEntries(updated);
     }
 
     return (
@@ -95,6 +101,10 @@ function Entries({entries, setEntries}) {
                         marginBottom: "20px",
                         width: "725px"
                     }}>
+                        <button className = "delete-entry" onClick = {() => handleDelete(index)}>
+                            🗑
+                        </button>
+
                         <div className = "entry-date-time">
                             <h3 className = "entry-date">Date: {entry.date}</h3>
                             <h3 className = "entry-time">Time: {entry.time}</h3>
