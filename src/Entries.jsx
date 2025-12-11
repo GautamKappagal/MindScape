@@ -1,5 +1,6 @@
 
-import React, { useState } from 'react'
+import React, {useState} from 'react'
+import Sentiment from 'sentiment'
 
 function Entries({entries, setEntries}) {
     const [entryTitle, setEntryTitle] = useState("")
@@ -9,15 +10,22 @@ function Entries({entries, setEntries}) {
     const [date, setDate] = useState(new Date().toISOString().slice(0, 10))
     const [showForm, setShowForm] = useState(false)
 
+    const sentiment = new Sentiment();
+
     function saveEntry() {
         const timestamp = new Date();
+        const combinedText = entryTitle + " " + entryDesc;
+        const analysisResult = sentiment.analyze(combinedText);
+        const sentimentScore = analysisResult.score;
+
         const newEntry = {
             date,
             time: timestamp.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }),
             feeling,
             productivity,
             entryTitle,
-            entryDesc
+            entryDesc,
+            sentimentScore
         }
 
         setEntries([newEntry, ...entries])

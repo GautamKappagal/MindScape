@@ -44,12 +44,16 @@
 }
 
 .sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;        /* full height */
   width: 200px;
   padding: 20px;
-  height: 100%;
+  background-color: #202020;
   display: flex;
   flex-direction: column;
-  background-color: #202020;
+  overflow-y: auto; /* scroll only if sidebar content grows */
   gap: 20px;
 }
 
@@ -70,8 +74,9 @@
 }
 
 .content {
-  flex: 1;
+  margin-left: 200px; /* same as sidebar width */
   padding: 20px;
+  flex: 1;
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -213,9 +218,6 @@ input[type="range"]::-webkit-slider-thumb {
 .new-entries-box.show {
   max-height: 600px;
   opacity: 1;
-}
-
-.new-entries-box.show {
   display: block;
   padding: 10px 25px;
 }
@@ -283,7 +285,7 @@ input[type="range"]::-webkit-slider-thumb {
 
 .trends-box {
   width: 800px;
-  padding: 4px 32px;
+  padding: 0 64px;
   justify-content: flex-start;
 }
 
