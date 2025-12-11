@@ -16,15 +16,15 @@ MindScape is designed with scalability in mind, incorporating features from the 
 | :--- | :--- | :--- |
 | **Daily Logging** | Capture Mood (1-10 slider), Productivity (1-10 slider), and an optional journal reflection. | React State Management, `localStorage` for persistence. |
 | **Visual Trends** | Professional data visualization to show mood and productivity changes over time. | Integration with **Chart.js** (or similar library) for Line and Bar charts. |
+| **Correlation Chart** | Connects points from low to high mood/productivity with a square aspect ratio for clear analysis. | Customized Chart.js scatter plot with connecting lines and fixed aspect ratio. |
 | **Simple Correlation** | Auto-generate rule-based insights, e.g., *"Your productivity is usually highest when your mood is above 7."* | Basic JavaScript arithmetic/filtering on stored data. |
 
 ### Level-Up & Differentiators
 
-These features elevate the project beyond a basic tracker and are excellent for resume demonstration:
-
 * **Mood-Triggered Recommendations:** If the user logs a low mood ($\text{Mood} < 4$), the system displays tailored, positive suggestions like *"Take a 10-minute walk"* or *"Listen to calming music."*
 * **Sentiment Analysis Integration (Planned):** Compare the numerical mood slider with the detected sentiment of the journal text. This is used to generate powerful insights like, *"You selected mood 8, but your journal text indicates high stress—are you masking tension?"*
 * **Weekly Summary Reports:** Generate a concise review of the week, highlighting the best day, worst day, and suggested improvement habits.
+* **Enhanced UI:** Active sidebar buttons feature a glowing border for improved navigation clarity.
 
 ### Advanced Stretch Goal (Future)
 
@@ -48,9 +48,10 @@ This project is built for speed, performance, and modern development standards.
 
 The UI follows a classic dashboard pattern for optimal user experience:
 
-* **Sidebar Navigation:** Used for quick context switching between the main views: `Entries`, `Analysis`, `Trends`, and `Streak`.
+* **Sidebar Navigation:** Used for quick context switching between the main views: `Entries`, `Analysis`, `Trends`, and `Streak`. Active buttons have a glowing border for clear focus.
 * **`Entries` View:** The main input form where users log data and view their historical reflections.
 * **`Analysis` View:** The core dashboard that presents computed statistics (Averages, Totals, Correlation Score) and generates textual insights.
+* **`Trends` View:** Visualizes mood and productivity trends with line charts and a correlation scatter plot connecting low-to-high points in a square aspect ratio.
 
 ---
 
@@ -82,5 +83,3 @@ To run MindScape locally, follow these steps:
     ```
 
 4.  Open your browser to the URL provided by Vite (usually `http://localhost:5173`).
-
----
